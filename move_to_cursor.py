@@ -56,7 +56,6 @@ def char_move_to_cursor():
     frame2 = (frame2 + 1) % 8
     delay(0.05)
 
-
 while running:
     clear_canvas()
     TUK_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
