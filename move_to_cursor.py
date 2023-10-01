@@ -19,7 +19,7 @@ def handle_events():
         elif event.type == SDL_MOUSEBUTTONDOWN:
             points.append((event.x, TUK_HEIGHT - 1 - event.y))
 
-def cursor_move(x, y):
+def cursor_point():
     global points
 
     cursor.draw(cursor_x, cursor_y)
@@ -32,11 +32,14 @@ frame = 0
 cursor_x, cursor_y = 0, 0
 points = []
 
+def char_move_to_cursor():
+    pass
+
 while running:
     clear_canvas()
     TUK_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
     char.clip_draw(frame * 100, 100 * 1, 100, 100, x, y)
-    cursor_move(cursor_x, cursor_y)
+    cursor_point()
     update_canvas()
     frame = (frame + 1) % 8
     handle_events()
